@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
           Text(
             "Formula 1",
             textAlign: TextAlign.center,
-            style: kTitleTextstyle.copyWith(
+            style: kHeadingTextStyle.copyWith(
               color: Colors.white,
             ),
           )

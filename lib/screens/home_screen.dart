@@ -20,14 +20,14 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   final List _children = [
     HomePage(),
-    HomePage(),
+    ResultPage(),
     HomePage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black.withOpacity(0.97),
+      backgroundColor: const Color.fromARGB(255, 6, 0, 10),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavBar(
         index: _currentIndex,

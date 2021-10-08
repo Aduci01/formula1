@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 
 const kHeadingTextStyle = TextStyle(
-  fontSize: 22,
-  fontWeight: FontWeight.w800,
-);
+    fontSize: 22, fontWeight: FontWeight.w800, fontFamily: "Formula1");
 
 const kSubTextStyle = TextStyle(fontSize: 16, color: kTextLightColor);
 

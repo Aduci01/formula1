@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:formula1/constants.dart';
 
 class BottomNavBar extends StatefulWidget {
   final int index;
@@ -34,9 +35,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       onTap: widget.onTap,
       selectedItemColor: Colors.red[800],
       unselectedItemColor: Colors.grey,
-      selectedLabelStyle: TextStyle(
-        color: Colors.green[400],
-      ),
+      selectedLabelStyle: kSubTextStyle,
     );
   }
 }
