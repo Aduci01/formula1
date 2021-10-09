@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:formula1/components/bottom_bar.dart';
 import 'package:formula1/screens/pages/home_page.dart';
+import 'package:formula1/screens/pages/result_page.dart';
+
+import '../constants.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -27,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 6, 0, 10),
+      backgroundColor: kBackgroundColor,
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavBar(
         index: _currentIndex,

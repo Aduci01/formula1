@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:formula1/components/ranking_card.dart';
 import 'package:formula1/models/driver_ranking.dart';
 import 'package:formula1/services/api_manager.dart';
 
@@ -14,7 +15,7 @@ class ResultPage extends StatefulWidget {
 }
 
 class _ResultPageState extends State<ResultPage> {
-  Future<List<Result>> results;
+  late Future<List<Result>> results;
 
   @override
   void initState() {
@@ -33,47 +34,25 @@ class _ResultPageState extends State<ResultPage> {
               return ListView.builder(
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index) {
-                    var article = snapshot.data.articles[index];
-                    var formattedTime = DateFormat('dd MMM - HH:mm')
-                        .format(article.publishedAt);
+                    var ranking = snapshot.data![index];
+
                     return Container(
-                      height: 100,
+                      height: 85,
                       margin: const EdgeInsets.all(8),
-                      child: Row(
-                        children: <Widget>[
-                          Card(
-                            clipBehavior: Clip.antiAlias,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            child: AspectRatio(
-                                aspectRatio: 1,
-                                child: Image.network(
-                                  article.urlToImage,
-                                  fit: BoxFit.cover,
-                                )),
+                      child: Column(
+                        children: [
+                          RankingCard(
+                            result: ranking,
                           ),
-                          SizedBox(width: 16),
-                          Flexible(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(formattedTime),
-                                Text(
-                                  article.title,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Text(
-                                  article.description,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ],
-                            ),
+                          const SizedBox(
+                            height: 10,
                           ),
+                          Divider(
+                            indent: 40,
+                            endIndent: 75,
+                            color: Colors.white.withAlpha(64),
+                            thickness: 0.4,
+                          )
                         ],
                       ),
                     );
@@ -81,7 +60,7 @@ class _ResultPageState extends State<ResultPage> {
             } else {
               return const SpinKitFadingCircle(
                 color: Colors.white,
-                size: 50,
+                size: 70,
               );
             }
           },
