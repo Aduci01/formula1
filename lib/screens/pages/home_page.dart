@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:formula1/services/api_manager.dart';
 
 import '../../constants.dart';
 
@@ -8,6 +9,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ApiManager().getNews();
+
     return Container(
       child: Column(
         children: [

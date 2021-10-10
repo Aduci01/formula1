@@ -30,14 +30,12 @@ class RankingCard extends StatelessWidget {
           const SizedBox(
             width: 12,
           ),
-          Container(
-            height: 10,
-            child: DecoratedBox(
-                decoration: BoxDecoration(
+          SizedBox(
+            height: 11,
+            child: VerticalDivider(
               color: teamColor,
-              shape: BoxShape.rectangle,
-              border: Border.all(width: 1.25, color: teamColor),
-            )),
+              thickness: 3,
+            ),
           ),
           const SizedBox(
             width: 12,
@@ -63,14 +61,12 @@ class RankingCard extends StatelessWidget {
             const SizedBox(
               width: 12,
             ),
-            Container(
-              height: 20,
-              child: DecoratedBox(
-                  decoration: BoxDecoration(
+            SizedBox(
+              height: 21,
+              child: VerticalDivider(
                 color: teamColor,
-                shape: BoxShape.rectangle,
-                border: Border.all(width: 2, color: teamColor),
-              )),
+                thickness: 4,
+              ),
             ),
             const SizedBox(
               width: 12,

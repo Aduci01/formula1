@@ -48,7 +48,7 @@ class _ResultPageState extends State<ResultPage> {
                             height: 10,
                           ),
                           Divider(
-                            indent: 40,
+                            indent: 30,
                             endIndent: 75,
                             color: Colors.white.withAlpha(64),
                             thickness: 0.4,
