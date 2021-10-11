@@ -54,10 +54,16 @@ class RankingCard extends StatelessWidget {
         ),
         Row(
           children: <Widget>[
-            Icon(
-              Icons.ac_unit,
-              color: Colors.white,
-            ),
+            SizedBox(
+                height: 25,
+                width: 25,
+                child: Image(
+                  image: Image.asset(
+                          "assets/images/logos/" + result.teamModel.id + ".png")
+                      .image,
+                  height: 25,
+                  width: 25,
+                )),
             const SizedBox(
               width: 12,
             ),

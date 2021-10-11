@@ -38,6 +38,8 @@ dependencies:
   convert: ^3.0.1
   xml2json: ^5.3.1
   flutter_spinkit: ^5.1.0
+  dio: ^4.0.0
+  url_launcher: ^6.0.12
 
 dev_dependencies:
   flutter_test:
@@ -64,8 +66,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/images/track.png
-     - assets/images/f1_car.jpg
+     - assets/images/
+     - assets/images/logos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

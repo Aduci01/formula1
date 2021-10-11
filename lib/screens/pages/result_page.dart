@@ -26,45 +26,43 @@ class _ResultPageState extends State<ResultPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Container(
-        child: FutureBuilder<List<Result>>(
-          future: results,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return ListView.builder(
-                  itemCount: snapshot.data!.length,
-                  itemBuilder: (context, index) {
-                    var ranking = snapshot.data![index];
+      child: FutureBuilder<List<Result>>(
+        future: results,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  var ranking = snapshot.data![index];
 
-                    return Container(
-                      height: 85,
-                      margin: const EdgeInsets.all(8),
-                      child: Column(
-                        children: [
-                          RankingCard(
-                            result: ranking,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Divider(
-                            indent: 30,
-                            endIndent: 75,
-                            color: Colors.white.withAlpha(64),
-                            thickness: 0.4,
-                          )
-                        ],
-                      ),
-                    );
-                  });
-            } else {
-              return const SpinKitFadingCircle(
-                color: Colors.white,
-                size: 70,
-              );
-            }
-          },
-        ),
+                  return Container(
+                    height: 85,
+                    margin: const EdgeInsets.all(8),
+                    child: Column(
+                      children: [
+                        RankingCard(
+                          result: ranking,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Divider(
+                          indent: 30,
+                          endIndent: 75,
+                          color: Colors.white.withAlpha(64),
+                          thickness: 0.4,
+                        )
+                      ],
+                    ),
+                  );
+                });
+          } else {
+            return const SpinKitFadingCircle(
+              color: Colors.white,
+              size: 70,
+            );
+          }
+        },
       ),
     );
   }

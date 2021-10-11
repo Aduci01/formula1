@@ -34,7 +34,7 @@ class ApiManager {
     return results;
   }
 
-  Future<String> getNews() async {
+  Future<List<NewsModel>> getNews() async {
     var client = http.Client();
     var news;
 
@@ -42,9 +42,7 @@ class ApiManager {
         "https://www.formula1.com/content/fom-website/en/latest/all.xml";
 
     try {
-      var response = await http.get(Uri.parse(url));
-
-      print(response.body);
+      var response = await client.get(Uri.parse(url));
 
       if (response.statusCode == 200) {
         final Xml2Json xml2Json = Xml2Json();
@@ -58,9 +56,9 @@ class ApiManager {
         news = List<NewsModel>.from(items.map((x) => NewsModel.fromJson(x)));
       }
     } on Exception {
-      return "news";
+      return news;
     }
 
-    return "news";
+    return news;
   }
 }
