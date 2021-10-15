@@ -20,10 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   final List _children = [
-    HomePage(),
     ResultPage(),
+    HomePage(),
     HomePage(),
   ];
 

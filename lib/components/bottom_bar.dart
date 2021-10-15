@@ -19,17 +19,23 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.shifting,
       backgroundColor: Colors.black,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
+            icon: Icon(Icons.leaderboard_outlined),
+            label: "Rankings",
+            backgroundColor: Colors.white),
+        BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
           label: "Home",
+          backgroundColor: Colors.black,
         ),
         BottomNavigationBarItem(
-            icon: Icon(Icons.leaderboard_outlined), label: "Rankings"),
-        BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/images/track.png")),
-            label: "Races"),
+          icon: ImageIcon(AssetImage("assets/images/track.png")),
+          label: "Races",
+          backgroundColor: Colors.white,
+        )
       ],
       currentIndex: widget.index,
       onTap: widget.onTap,

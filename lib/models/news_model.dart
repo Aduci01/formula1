@@ -11,7 +11,7 @@ class NewsModel {
   String url;
 
   factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
-        title: json["title"],
+        title: json["title"].replaceAll('â', ''),
         description: json["description"],
         url: json["link"],
       );

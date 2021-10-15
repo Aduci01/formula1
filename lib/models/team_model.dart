@@ -41,6 +41,7 @@ class TeamModel {
       "toro_rosso": Color(0xFF0000FF),
       "sauber": Color(0xFF006EFF),
       "manor": Color(0xFFAAFFFF),
+      "aston_martin": Color(0xFF006F62),
     };
 
     return teamColors[id] ?? Colors.white;

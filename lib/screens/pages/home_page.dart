@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:formula1/components/home_header.dart';
 import 'package:formula1/components/news_card.dart';
 import 'package:formula1/models/news_model.dart';
 import 'package:formula1/services/api_manager.dart';
@@ -25,52 +26,48 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset("assets/images/f1_car.jpg"),
-        Text(
-          "Formula 1",
-          textAlign: TextAlign.center,
-          style: kHeadingTextStyle.copyWith(color: Colors.white),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Expanded(
-          child: FutureBuilder<List<NewsModel>>(
-            future: news,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return ListView.builder(
-                    itemCount: snapshot.data!.length,
-                    itemBuilder: (context, index) {
-                      var newsModel = snapshot.data![index];
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          const Header(title: "Formula 1\nNews"),
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              child: FutureBuilder<List<NewsModel>>(
+                future: news,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView.builder(
+                        itemCount: snapshot.data!.length,
+                        itemBuilder: (context, index) {
+                          var newsModel = snapshot.data![index];
 
-                      return Container(
-                        margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                        height: 100,
-                        child: Column(
-                          children: [
-                            NewsCard(
-                              news: newsModel,
+                          return Container(
+                            margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                            height: 100,
+                            child: Column(
+                              children: [
+                                NewsCard(news: newsModel, index: index),
+                                const SizedBox(
+                                  height: 5,
+                                )
+                              ],
                             ),
-                            const SizedBox(
-                              height: 5,
-                            )
-                          ],
-                        ),
-                      );
-                    });
-              } else {
-                return const SpinKitChasingDots(
-                  color: Colors.white,
-                  size: 30,
-                );
-              }
-            },
-          ),
-        )
-      ],
+                          );
+                        });
+                  } else {
+                    return const SpinKitChasingDots(
+                      color: Colors.blueGrey,
+                      size: 30,
+                    );
+                  }
+                },
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

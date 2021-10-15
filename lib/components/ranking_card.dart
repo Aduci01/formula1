@@ -61,8 +61,8 @@ class RankingCard extends StatelessWidget {
                   image: Image.asset(
                           "assets/images/logos/" + result.teamModel.id + ".png")
                       .image,
-                  height: 25,
-                  width: 25,
+                  height: 30,
+                  width: 30,
                 )),
             const SizedBox(
               width: 12,
