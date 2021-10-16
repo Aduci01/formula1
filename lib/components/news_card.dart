@@ -7,7 +7,7 @@ class NewsCard extends StatelessWidget {
   final NewsModel news;
   final int index;
 
-  final List<Color> colors = [const Color(0xFF002B3D)];
+  final List<Color> colors = [Colors.white];
 
   NewsCard({Key? key, required this.news, required this.index})
       : super(key: key);
@@ -19,7 +19,7 @@ class NewsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: colors[index % colors.length],
-      elevation: 8,
+      elevation: 4,
       shadowColor: Colors.grey,
       shape: const OutlineInputBorder(
           borderRadius: BorderRadius.only(
@@ -33,10 +33,10 @@ class NewsCard extends StatelessWidget {
             child: Row(
               children: [
                 Icon(Icons.library_books_outlined,
-                    color: Colors.white.withOpacity(0.9)),
+                    color: Colors.black.withOpacity(0.8)),
                 const SizedBox(width: 12),
                 const VerticalDivider(
-                  color: Colors.white,
+                  color: Colors.black,
                   thickness: 1.5,
                 ),
               ],
@@ -44,11 +44,11 @@ class NewsCard extends StatelessWidget {
           ),
           title: Text(
             news.title,
-            style: TextStyle(color: Colors.white.withOpacity(0.8)),
+            style: TextStyle(color: Colors.black.withOpacity(0.8)),
           ),
           trailing: const Icon(
             Icons.arrow_forward_ios,
-            color: Colors.white70,
+            color: Colors.black54,
           ),
           onTap: () => {_launchURL(news.url)},
           contentPadding: const EdgeInsets.all(10),

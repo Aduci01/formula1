@@ -14,7 +14,7 @@ class Result {
       required this.teamModel});
 
   int position;
-  int points;
+  double points;
   int wins;
 
   DriverModel driverModel;
@@ -22,7 +22,7 @@ class Result {
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
       position: int.parse(json["position"]),
-      points: int.parse(json["points"]),
+      points: double.parse(json["points"]),
       wins: int.parse(json["wins"]),
       driverModel: DriverModel.fromJson(json["Driver"]),
       teamModel: TeamModel.fromJson(json["Constructors"][0]));

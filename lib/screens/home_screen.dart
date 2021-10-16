@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formula1/bloc/news/news_bloc.dart';
+import 'package:formula1/bloc/results/results_bloc.dart';
 import 'package:formula1/components/bottom_bar.dart';
 import 'package:formula1/screens/pages/home_page.dart';
 import 'package:formula1/screens/pages/result_page.dart';
@@ -22,8 +25,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _currentIndex = 1;
   final List _children = [
-    ResultPage(),
-    HomePage(),
+    BlocProvider(
+      create: (BuildContext context) => ResultsBloc(),
+      child: ResultPage(),
+    ),
+    BlocProvider(
+      create: (BuildContext context) => NewsBloc(),
+      child: HomePage(),
+    ),
     HomePage(),
   ];
 

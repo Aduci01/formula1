@@ -38,6 +38,8 @@ dependencies:
   xml2json: ^5.3.1
   flutter_spinkit: ^5.1.0
   url_launcher: ^6.0.12
+  flutter_bloc: ^7.3.1
+  equatable: ^2.0.3
 
 dev_dependencies:
   flutter_test:

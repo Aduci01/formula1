@@ -23,7 +23,7 @@ class CustomDropDown extends StatelessWidget {
       children: <Widget>[
         Container(
           width: 250,
-          height: 50,
+          height: 45,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(30)),
           child: Padding(
