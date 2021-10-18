@@ -18,7 +18,6 @@ class CircuitCard extends StatelessWidget {
       subtitle: Text(circuit.locality),
       controlAffinity: ListTileControlAffinity.leading,
       children: <Widget>[
-        ListTile(title: Text('This is tile number 3')),
         Image(
           errorBuilder:
               (BuildContext context, Object exception, StackTrace? stackTrace) {

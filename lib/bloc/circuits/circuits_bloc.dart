@@ -16,6 +16,7 @@ class CircuitsBloc extends Bloc<CircuitsEvent, CircuitsState> {
           emit(CircuitsLoading());
 
           var circuitResult = await apiManager.getCircuits();
+          circuitResult.sort((a, b) => a.circuitName.compareTo(b.circuitName));
 
           emit(CircuitsLoaded(circuitResult));
         } catch (e) {

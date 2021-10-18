@@ -16,6 +16,7 @@ class ResultsBloc extends Bloc<ResultsEvent, ResultsState> {
           emit(ResultsLoading());
 
           var newsResult = await apiManager.getResults(event.year);
+          newsResult.sort((a, b) => a.position.compareTo(b.position));
 
           emit(ResultsLoaded(newsResult));
         } catch (e) {
