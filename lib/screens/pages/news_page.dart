@@ -6,18 +6,15 @@ import 'package:formula1/bloc/news/news_bloc.dart';
 import 'package:formula1/components/home_header.dart';
 import 'package:formula1/components/news_card.dart';
 import 'package:formula1/models/news_model.dart';
-import 'package:formula1/services/api_manager.dart';
 
-import '../../constants.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class NewsPage extends StatefulWidget {
+  const NewsPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<NewsPage> createState() => _NewsPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _NewsPageState extends State<NewsPage> {
   late Future<List<NewsModel>> news;
 
   @override

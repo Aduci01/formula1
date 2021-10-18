@@ -28,7 +28,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             backgroundColor: Colors.white),
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
-          label: "Home",
+          label: "News",
           backgroundColor: Colors.black,
         ),
         BottomNavigationBarItem(

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:formula1/models/circuit_model.dart';
 import 'package:formula1/models/driver_ranking.dart';
 import 'package:formula1/models/news_model.dart';
 import 'package:http/http.dart' as http;
@@ -60,5 +61,32 @@ class ApiManager {
     }
 
     return news;
+  }
+
+  Future<List<CircuitModel>> getCircuits() async {
+    var client = http.Client();
+    var results;
+
+    String url = "http://ergast.com/api/f1/2021/circuits.json";
+
+    try {
+      var response = await client.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        var jsonString = response.body;
+        var jsonMap = json.decode(jsonString);
+
+        var mrdata = jsonMap["MRData"];
+        var circuitTable = mrdata["CircuitTable"];
+        var circuitLists = circuitTable["Circuits"];
+
+        results = List<CircuitModel>.from(
+            circuitLists.map((x) => CircuitModel.fromJson(x)));
+      }
+    } on Exception {
+      return results;
+    }
+
+    return results;
   }
 }

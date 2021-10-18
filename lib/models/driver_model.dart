@@ -22,7 +22,10 @@ class DriverModel {
         givenName: json["givenName"],
         familyName: json["familyName"],
         nationality: json["nationality"],
-        permanentNumber: int.parse(json["permanentNumber"]),
+        permanentNumber: int.parse(
+            json.keys.contains("permanentNumber") == false
+                ? "0"
+                : json["permanentNumber"]),
       );
 
   Map<String, dynamic> toJson() => {

@@ -30,7 +30,7 @@ class _ResultPageState extends State<ResultPage> {
 
     _dropdownItems.clear();
 
-    for (int i = 2000; i <= 2021; i++) {
+    for (int i = 2012; i <= 2021; i++) {
       var d = DropdownMenuItem(
         value: i,
         child: Text(i.toString()),
@@ -74,7 +74,7 @@ class _ResultPageState extends State<ResultPage> {
                         var ranking = state.model[index];
 
                         return Container(
-                          height: 85,
+                          height: 160,
                           margin: const EdgeInsets.all(8),
                           child: Column(
                             children: [
@@ -84,12 +84,6 @@ class _ResultPageState extends State<ResultPage> {
                               const SizedBox(
                                 height: 10,
                               ),
-                              Divider(
-                                indent: 30,
-                                endIndent: 75,
-                                color: Colors.white.withAlpha(64),
-                                thickness: 0.4,
-                              )
                             ],
                           ),
                         );

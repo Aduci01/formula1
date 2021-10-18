@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formula1/bloc/circuits/circuits_bloc.dart';
 import 'package:formula1/bloc/news/news_bloc.dart';
 import 'package:formula1/bloc/results/results_bloc.dart';
 import 'package:formula1/components/bottom_bar.dart';
-import 'package:formula1/screens/pages/home_page.dart';
+import 'package:formula1/screens/pages/circuits_page.dart';
+import 'package:formula1/screens/pages/news_page.dart';
 import 'package:formula1/screens/pages/result_page.dart';
 
 import '../constants.dart';
@@ -31,9 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
     BlocProvider(
       create: (BuildContext context) => NewsBloc(),
-      child: HomePage(),
+      child: NewsPage(),
     ),
-    HomePage(),
+    BlocProvider(
+      create: (BuildContext context) => CircuitsBloc(),
+      child: CircuitsPage(),
+    ),
   ];
 
   @override

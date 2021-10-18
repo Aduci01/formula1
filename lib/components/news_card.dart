@@ -7,7 +7,7 @@ class NewsCard extends StatelessWidget {
   final NewsModel news;
   final int index;
 
-  final List<Color> colors = [Colors.white];
+  final List<Color> colors = [const Color(0xFF002B3D)];
 
   NewsCard({Key? key, required this.news, required this.index})
       : super(key: key);
@@ -33,10 +33,10 @@ class NewsCard extends StatelessWidget {
             child: Row(
               children: [
                 Icon(Icons.library_books_outlined,
-                    color: Colors.black.withOpacity(0.8)),
+                    color: Colors.white.withOpacity(0.9)),
                 const SizedBox(width: 12),
                 const VerticalDivider(
-                  color: Colors.black,
+                  color: Colors.white,
                   thickness: 1.5,
                 ),
               ],
@@ -44,7 +44,7 @@ class NewsCard extends StatelessWidget {
           ),
           title: Text(
             news.title,
-            style: TextStyle(color: Colors.black.withOpacity(0.8)),
+            style: TextStyle(color: Colors.white.withOpacity(0.8)),
           ),
           trailing: const Icon(
             Icons.arrow_forward_ios,

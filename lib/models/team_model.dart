@@ -27,7 +27,7 @@ class TeamModel {
     Map<String, Color?> teamColors = {
       "mercedes": Color(0xFF00CFBA),
       "ferrari": Color(0xFFC30000),
-      "red_bull": Color(0xFF00007D),
+      "red_bull": Color(0xFF0000A4),
       "racing_point": Colors.pink[200],
       "renault": Color(0xFFFFD800),
       "mclaren": Color(0xFFFF8700),
