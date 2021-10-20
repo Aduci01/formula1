@@ -29,7 +29,7 @@ class _NewsPageState extends State<NewsPage> {
     return Container(
         color: Colors.white,
         child: Column(children: [
-          const Header(title: "Formula 1\nNews"),
+          const Header(title: "News"),
           Expanded(
               child: Container(
             color: Colors.white,
@@ -42,7 +42,7 @@ class _NewsPageState extends State<NewsPage> {
                         var newsModel = state.model[index];
 
                         return Container(
-                          margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                          margin: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                           height: 100,
                           child: Column(
                             children: [

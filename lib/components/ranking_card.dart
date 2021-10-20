@@ -136,7 +136,7 @@ class RankingCard extends StatelessWidget {
                 children: [
                   Positioned(
                     bottom: -20,
-                    right: 100,
+                    right: 85,
                     child: Text(
                       result.driverModel.permanentNumber.toString(),
                       style: TextStyle(

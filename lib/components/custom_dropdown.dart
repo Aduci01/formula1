@@ -33,10 +33,10 @@ class CustomDropDown extends StatelessWidget {
               value: value,
               hint: Text(
                 hint,
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20, color: Colors.black),
                 overflow: TextOverflow.ellipsis,
               ),
-              style: kTitleTextstyle,
+              style: kTitleTextstyle.copyWith(color: Colors.black),
               items: items,
               onChanged: (item) {
                 onChanged(item);

@@ -48,10 +48,10 @@ class NewsCard extends StatelessWidget {
           ),
           trailing: const Icon(
             Icons.arrow_forward_ios,
-            color: Colors.black54,
+            color: Colors.white70,
           ),
           onTap: () => {_launchURL(news.url)},
-          contentPadding: const EdgeInsets.all(10),
+          contentPadding: const EdgeInsets.all(8),
         ),
       ),
     );

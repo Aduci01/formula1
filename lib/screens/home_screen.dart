@@ -45,7 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: _children[_currentIndex],
+      body: SafeArea(
+        child: _children[_currentIndex],
+      ),
       bottomNavigationBar: BottomNavBar(
         index: _currentIndex,
         onTap: _onBottomNavTapped,

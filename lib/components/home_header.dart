@@ -20,20 +20,15 @@ class Header extends StatelessWidget {
         decoration: const BoxDecoration(color: kBackgroundColor),
         child: Column(
           children: <Widget>[
-            const SizedBox(
-              height: 5,
-            ),
             Text(
               title,
               textAlign: TextAlign.center,
               style: kHeadingTextStyle.copyWith(color: Colors.white),
             ),
-            Row(children: [
-              Image.asset(
-                "assets/images/f1_car.jpg",
-                height: height - 15,
-              ),
-            ])
+            Image.asset(
+              "assets/images/f1_car.jpg",
+              fit: BoxFit.contain,
+            )
           ],
         ),
       ),
