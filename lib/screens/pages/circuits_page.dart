@@ -29,7 +29,7 @@ class _CircuitsPageState extends State<CircuitsPage> {
     return Container(
         color: Colors.white,
         child: Column(children: [
-          const Header(title: "Formula 1\nNews"),
+          const Header(title: "Circuits"),
           Expanded(
               child: Container(
             color: Colors.white,

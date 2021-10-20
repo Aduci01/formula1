@@ -10,16 +10,18 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height * 0.35;
+
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
-        height: 275,
+        height: height,
         width: double.infinity,
         decoration: const BoxDecoration(color: kBackgroundColor),
         child: Column(
           children: <Widget>[
-            SizedBox(
-              height: 10,
+            const SizedBox(
+              height: 5,
             ),
             Text(
               title,
@@ -29,7 +31,7 @@ class Header extends StatelessWidget {
             Row(children: [
               Image.asset(
                 "assets/images/f1_car.jpg",
-                height: 260,
+                height: height - 15,
               ),
             ])
           ],

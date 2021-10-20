@@ -51,8 +51,7 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Column(
+    return Column(
       children: [
         const Header(title: "Results"),
         CustomDropDown(
@@ -100,6 +99,6 @@ class _ResultPageState extends State<ResultPage> {
           ),
         )
       ],
-    ));
+    );
   }
 }
