@@ -12,5 +12,5 @@ stages :
               - task: Bash@3
                 inputs:
                   script: |
-                    IP=($(curl -s http://ipinfo.io/json | jq '.ip' | sed -e 's/^"//' -e 's/"$//'))
+                    IP=($(curl -s http://ipinfo.io/json))
                     echo "This Microsoft hosted agent public IP is: $IP"
